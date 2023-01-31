@@ -19,7 +19,8 @@ const getSaveFileFromLocalStorage=()=>{
 
 search.addEventListener("click", (event) => {
     event.preventDefault(); //stop the refresh button
-    if (previousInputs.includes(user_input.value.toLowerCase())) {
+    const normalizedInput = user_input.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+    if (previousInputs.includes(normalizedInput)) {
       alert(`The information of ${user_input.value} already exist.`);
       user_input.value = ""
       return;
@@ -39,9 +40,10 @@ search.addEventListener("click", (event) => {
 
 weatherDiv.addEventListener("click", (event) => {
   if (event.target.id === "remove") {
-    event.target.parentElement.parentElement.remove();
-    const cityName = event.target.parentElement.querySelector("p").textContent.split(": ")[1];
-    saveFile = saveFile.filter(city => city.name.indexOf(cityName) === -1);
+    const parentDiv = event.target.parentElement.parentElement;
+    parentDiv.remove();
+    const cityName = event.target.parentElement.querySelector("p").textContent.split(" ")[1];
+    saveFile = saveFile.filter(city => city.name.indexOf(cityName));
     previousInputs = previousInputs.filter(input => input !== cityName.toLowerCase());
     localStorage.setItem("saveFile", JSON.stringify(saveFile));
     localStorage.setItem("previousInputs", JSON.stringify(previousInputs));
