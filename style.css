@@ -1,0 +1,64 @@
+body{
+    background-image: url(./img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+h2, #remove, span, #user_input::placeholder, input {
+    color: white !important;
+}
+
+h2, #user_input{
+    text-shadow: 2px 2px 5px black;
+}
+
+.myBorder{
+    border: 3px solid rgba(128, 128, 128, 0.198);
+    border-radius: 10px;
+    background-color: lightgray;
+    box-shadow: 6px 5px 1px rgba(198, 0, 248, 0.692);
+}
+
+.icon{
+    transform-origin: center;
+    transform: scale(1.5);
+}
+
+#remove{
+    float: right;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    padding: 9px;
+}
+
+span{
+    background-color: green;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 10px;
+}
+
+p, #search, #user_input{
+    font-size: 25px;
+}
+
+#user_input{
+    width: 360px;
+    border: none;
+    border-bottom: 4px solid yellow;
+    background-color: rgba(0, 0, 0, 0.442);
+    border-radius: 10px;
+}
+
+#user_input::placeholder{
+    color: white;
+    text-align: center;
+}
+
+#search{
+    border: none;
+    border-radius: 10px;
+    border-bottom: 4px solid rgba(198, 0, 248, 0.692);
+}
