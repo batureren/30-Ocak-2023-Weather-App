@@ -2,7 +2,9 @@ body{
     background-image: url(./img/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100vh;
+    word-wrap: break-word;
 }
 
 h2, #remove, span, #user_input::placeholder, input {
@@ -21,8 +23,7 @@ h2, #user_input{
 }
 
 .icon{
-    transform-origin: center;
-    transform: scale(1.5);
+    padding-left: 30px;
 }
 
 #remove{
@@ -41,7 +42,7 @@ span{
 }
 
 p, #search, #user_input{
-    font-size: 25px;
+    font-size: 23px;
 }
 
 #user_input{
